@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/pages/homepage.dart';
+import 'package:myapp/pages/register.dart';
 
 
 class LoginPage extends StatefulWidget {
@@ -43,9 +44,10 @@ class _LoginPageState extends State<LoginPage> {
           keyboardType: TextInputType.emailAddress,
           autofocus: false,
           decoration: InputDecoration(
-            hintText: 'E-mail',
+            prefixIcon: Icon(Icons.email,color: Colors.deepOrange),
+            labelText: "E-mail",
             contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))
           ),
         ),
         Padding(
@@ -62,11 +64,12 @@ class _LoginPageState extends State<LoginPage> {
                 _password = val;
             });
           },
-          onSaved: (val) => _email = val,
+          onSaved: (val) => _password = val,
           autofocus: false,
           obscureText: true,
           decoration: InputDecoration(
-            hintText: 'Password',
+            labelText: "Password",
+            prefixIcon: Icon(Icons.lock,color: Colors.deepOrange),
             contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
           )
@@ -111,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
         onPressed: () {
           Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Home()));},
+              MaterialPageRoute(builder: (context) => RegisterPage()));},
             padding: EdgeInsets.all(12),
             color: Colors.grey[700],
             child: Text('Register', style: TextStyle(color: Colors.white)
