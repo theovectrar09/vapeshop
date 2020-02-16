@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/pages/homepage.dart';
 import 'package:myapp/pages/register.dart';
+import 'dart:io';
 
 
 class LoginPage extends StatefulWidget {
@@ -133,17 +134,12 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Myfirstapp'),
-        centerTitle: true,
-        backgroundColor: Colors.deepOrange,
-      ),
       backgroundColor: Colors.white,
       body: Center(
         child: ListView(
           padding: EdgeInsets.only(left: 30.0, right: 30.0),
           children: <Widget>[
-            SizedBox(height: 20.0),
+            SizedBox(height: 70.0),
             logo,
             SizedBox(height: 20.0),
             Text(
